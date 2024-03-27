@@ -10,12 +10,14 @@ import FirebaseCore
 
 @main
 struct GDZ_AppApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-            OnboardingCarousel()
+            NavigationView {
+                OnboardingCarousel()
+                ChooseGrade()
+            }
         }
     }
 }
@@ -37,14 +39,14 @@ struct OnboardingCarousel: View {
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
 }
 
-
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
 }
