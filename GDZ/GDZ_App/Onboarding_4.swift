@@ -39,7 +39,6 @@ struct Onboarding_4: View {
                 
                 VStack {
                     Button(action: {
-                        print("Skip_All")
                     }) {
                         Text("Восстановить покупки")
                             .foregroundColor(Color(red: 234.0 / 255.0, green: 233.0 / 255.0, blue: 223.0 / 255.0))
@@ -50,7 +49,6 @@ struct Onboarding_4: View {
                     }
                     
                     Button(action: {
-                        print("Skip_All")
                     }) {
                         Text("Перейти к выбору класса")
                             .foregroundColor(Color(red: 234.0 / 255.0, green: 233.0 / 255.0, blue: 223.0 / 255.0))
